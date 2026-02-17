@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Portal</title>
+  <style>
+    /* Reset default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+    }
+
+
+    .topnav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background: linear-gradient(90deg, #4b6cb7, #182848);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+
+    .topnav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+
+    .topnav .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+
+    .topnav a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.4rem 0;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+
+    .topnav a:hover {
+      border-color: #ffffff;
+      color: #ffffff;
+    }
+
+
+    @media screen and (max-width: 768px) {
+      .topnav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+
+      .topnav .nav-links {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+      }
+
+
+      .topnav .nav-links a {
+        padding: 0.5rem 0;
+      }
+    }
+    main {
+      padding: 2rem;
+    }
+
+
+  </style>
+  {% block head %}{% endblock head %}
+</head>
+<body>
+
+
+  <!-- Flask / Jinja includes -->
+  {% include "master/nav.html" %}
+  {% block body %}
+   {% endblock body %}
+
+
+</body>
+</html>
