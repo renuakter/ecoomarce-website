@@ -1,6 +1,9 @@
-<div class="topnav">
-  <a class="active" href="">base</a>
-  <a href="">Home</a>
-  <a href="">Department</a>
-  <a href="">Doctor</a>
- </div>
+<nav>
+    {% if user.is_authenticated %}
+        <a href="{% url 'homepage' %}">Home</a>
+        <a href="{% url 'logoutpage' %}">Logout</a>
+    {% else %}
+        <a href="{% url 'loginpage' %}">Login</a>
+        <a href="{% url 'registerpage' %}">Register</a>
+    {% endif %}
+</nav>
