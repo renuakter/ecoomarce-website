@@ -42,7 +42,7 @@ def loginpage(request):
         user=authenticate(request,username=username,password=password)
         if user:
             login(request,user)
-            return redirect("master/home.html")
+            return redirect("homepage")
             
                                   
     return render(request,'auth/login.html') 
